@@ -1,0 +1,16 @@
+# Ignora as dependências
+Backend/node_modules/
+Frontend/node_modules/
+
+# Ignora o arquivo de variáveis de ambiente
+Backend/.env
+
+# Ignora arquivos temporários
+.DS_Store
+Thumbs.db
+*.log
+
+# VS Code
+.vscode/
+
+
