@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +37,8 @@ form {
   justify-content: center;
 }
 
-form input {
+form input,
+form textarea {
   flex: 1 1 200px;
   padding: 0.75rem;
   border: 2px solid #f8cdda;
@@ -45,9 +46,11 @@ form input {
   font-size: 1rem;
   background-color: #fff;
   transition: border-color 0.3s;
+  resize: vertical;
 }
 
-form input:focus {
+form input:focus,
+form textarea:focus {
   border-color: #ff69b4;
   outline: none;
 }
@@ -108,8 +111,8 @@ form button:hover {
   margin-bottom: 1.2rem;
   padding: 1rem 1.5rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
   transition: transform 0.2s;
 }
 
@@ -117,19 +120,32 @@ form button:hover {
   transform: scale(1.01);
 }
 
-#task-list li span {
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-title {
   flex: 1;
   font-size: 1.1rem;
   word-wrap: break-word;
   color: #4a4a4a;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
 }
 
-#task-list li .completed {
+.task-title.expanded {
+  color: #b0006d;
+}
+
+.task-title.completed {
   text-decoration: line-through;
   color: #bbb;
 }
 
-#task-list li button {
+.task-actions button {
   margin-left: 0.6rem;
   border: none;
   padding: 0.5rem 0.8rem;
@@ -139,20 +155,32 @@ form button:hover {
   transition: 0.2s;
 }
 
-#task-list li button:first-of-type {
+.task-actions .complete-btn {
   background-color: #f78fb3;
   color: white;
 }
 
-#task-list li button:first-of-type:hover {
+.task-actions .complete-btn:hover {
   background-color: #e6679d;
 }
 
-#task-list li button:last-of-type {
+.task-actions .delete-btn {
   background-color: #ff6b81;
   color: white;
 }
 
-#task-list li button:last-of-type:hover {
+.task-actions .delete-btn:hover {
   background-color: #ff4757;
+}
+
+/* Manter quebras de linha na descrição */
+.task-description {
+  white-space: pre-wrap;
+  color: #555;
+  font-size: 1rem;
+  padding-left: 0.4rem;
+}
+
+.task-description.hidden {
+  display: none;
 }

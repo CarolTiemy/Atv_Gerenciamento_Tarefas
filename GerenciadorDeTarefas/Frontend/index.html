@@ -2,15 +2,16 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gerenciador de Tarefas</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>🌸 Gerenciador de Tarefas 🌸</h1>
+
   <form id="task-form">
     <input type="text" id="title" placeholder="Título" required />
-    <input type="text" id="description" placeholder="Descrição" required />
+    <textarea id="description" placeholder="Descrição" required></textarea>
     <button type="submit">Adicionar</button>
   </form>
 
@@ -24,5 +25,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
